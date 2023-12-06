@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".view.CartActivity">
+
+        <TextView
+            android:id="@+id/noBookmarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/your_cart_is_empty"
+            android:textColor="@color/noBookmark"
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/emptyCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:gravity="center"
+            android:text="@string/don_t_let_go_your_shopping_habit"
+            android:textColor="@color/vDarkGray"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loadingIndicator"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+        <ScrollView
+            android:id="@+id/recylerviewScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:visibility="gone"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsInCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:layout_weight="0.1"
+                android:text="Total: "
+                android:textSize="@dimen/dimen30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="right"
+                android:layout_weight="0.2"
+                android:text="Rs. "
+                android:textSize="@dimen/dimen30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="right"
+                android:layout_weight="0.7"
+                android:text="Total: "
+                android:textSize="@dimen/dimen30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/orderNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Order now" />
+    </LinearLayout>
+</layout>
